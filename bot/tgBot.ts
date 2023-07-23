@@ -31,14 +31,14 @@ class TgBot {
         if (msg.chat.type === 'private' && msg.from.id === ADMIN_ID) {
             this.replyTo(context, "我在~");
         } else {
-            this.replyTo(context, "欢迎联系私聊 Bot ，我已经打开了一条转发通道至我的 Owner 。\n必须要每次回复本条消息才可以进行私聊，否则消息会被丢弃。");
+            this.replyTo(context, "欢迎联系私聊 Bot ，我已经打开了一条转发通道至我的 Owner 。\n必须要每次回复我的消息才可以进行私聊，否则消息会被丢弃。");
         }
     }
 
     protected onText(context: Context<Update.MessageUpdate>) {
-        if ('reply_to_message' in context.message) {
+        //if ('reply_to_message' in context.message) {
             this.onReply(context);
-        }
+        //}
     }
 
     protected onReply(context: Context<Update.MessageUpdate>) {
